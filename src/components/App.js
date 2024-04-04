@@ -66,7 +66,7 @@ export default function App() {
     // 🔥 STEP 10- RUN VALIDATION WITH YUP
     setFormValues({
       ...formValues,
-      [name]: value // NOT AN ARRAY
+      [name]: value
     })
   }
 

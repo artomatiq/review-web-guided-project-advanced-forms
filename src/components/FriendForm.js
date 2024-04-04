@@ -16,7 +16,10 @@ export default function FriendForm(props) {
 
   const onChange = evt => {
     /* 🔥 FIX THIS SO IT ALSO WORKS WITH CHECKBOXES */
-    const { name, value } = evt.target
+    console.log(evt)
+    let { type, checked, name, value } = evt.target
+    if (type === 'checkbox') value = checked
+
     change(name, value)
   }
 
@@ -26,7 +29,7 @@ export default function FriendForm(props) {
         <h2>Add a Friend</h2>
 
         {/* 🔥 DISABLE THE BUTTON */}
-        <button>submit</button>
+        <button disabled={disabled}>submit</button>
 
         <div className='errors'>
           {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
@@ -40,9 +43,6 @@ export default function FriendForm(props) {
       <div className='form-group inputs'>
         <h4>General information</h4>
 
-        {/* ////////// TEXT INPUTS ////////// */}
-        {/* ////////// TEXT INPUTS ////////// */}
-        {/* ////////// TEXT INPUTS ////////// */}
         <label>Username&nbsp;
           <input
             value={values.username}
@@ -77,18 +77,20 @@ export default function FriendForm(props) {
         <label>Single
           <input
             type='radio'
-            name='single'
+            name='civil'
             value='single'
-            onChange={onchange}
+            checked={values.civil === 'single'}
+            onChange={onChange}
           />
         </label>
 
         <label>Married
           <input
             type='radio'
-            name='married'
+            name='civil'
             value='married'
-            onChange={onchange}
+            checked={values.civil === 'married'}
+            onChange={onChange}
           />
         </label>
       </div>
@@ -100,8 +102,8 @@ export default function FriendForm(props) {
           <input
             type='checkbox'
             name='hiking'
-            value='hiking'
-            onChange={onchange}
+            checked={values.hiking}
+            onChange={onChange}
           />
         </label>
 
@@ -109,8 +111,8 @@ export default function FriendForm(props) {
         <input
             type='checkbox'
             name='reading'
-            value='hiking'
-            onChange={onchange}
+            checked={values.reading}
+            onChange={onChange}
           />
         </label>
 
@@ -118,8 +120,8 @@ export default function FriendForm(props) {
         <input
             type='checkbox'
             name='coding'
-            value='coding'
-            onChange={onchange}
+            checked={values.coding}
+            onChange={onChange}
           />
         </label>
       </div>

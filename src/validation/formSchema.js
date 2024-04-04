@@ -18,9 +18,12 @@ const schema = yup.object().shape({
         .string()
         .oneOf(['single', 'married'])
         .required(),
-    hobbies: yup
-        .array()
-        .of(yup.string().oneOf(['hiking', 'reading', 'coding']))
+    hiking: yup
+        .boolean(),
+    reading: yup
+        .boolean(),
+    coding: yup
+        .boolean()
 })
 
 export default schema
