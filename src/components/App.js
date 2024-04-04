@@ -43,6 +43,7 @@ export default function App() {
 
     axios.get(`http://buddies.com/api/friends`)
       .then(res => {
+        console.log(res)
         setFriends(res.data)
       })
       .catch( err => console.log(err))
@@ -56,6 +57,8 @@ export default function App() {
     axios.post(`http://buddies.com/api/friends`, newFriend)
       .then (res => {
         console.log(res.data.message)
+        setFriends([res.data, ...friends])
+        setFormValues(initialFormValues)
       })
       .catch(err => {
         console.log(err)
