@@ -61,9 +61,6 @@ export default function FriendForm(props) {
           />
         </label>
 
-        {/* ////////// DROPDOWN ////////// */}
-        {/* ////////// DROPDOWN ////////// */}
-        {/* ////////// DROPDOWN ////////// */}
         <label>Role
           <select
             onChange={onChange}
@@ -77,15 +74,22 @@ export default function FriendForm(props) {
           </select>
         </label>
 
-        {/* ////////// RADIO BUTTONS ////////// */}
-        {/* ////////// RADIO BUTTONS ////////// */}
-        {/* ////////// RADIO BUTTONS ////////// */}
         <label>Single
-
+          <input
+            type='radio'
+            name='single'
+            value='single'
+            onChange={onchange}
+          />
         </label>
 
         <label>Married
-
+          <input
+            type='radio'
+            name='married'
+            value='married'
+            onChange={onchange}
+          />
         </label>
       </div>
 
@@ -96,7 +100,7 @@ export default function FriendForm(props) {
           <input
             type='checkbox'
             name='hiking'
-            id='hiking'
+            value='hiking'
             onChange={onchange}
           />
         </label>
@@ -105,7 +109,7 @@ export default function FriendForm(props) {
         <input
             type='checkbox'
             name='reading'
-            id='reading'
+            value='hiking'
             onChange={onchange}
           />
         </label>
@@ -114,7 +118,7 @@ export default function FriendForm(props) {
         <input
             type='checkbox'
             name='coding'
-            id='coding'
+            value='coding'
             onChange={onchange}
           />
         </label>
