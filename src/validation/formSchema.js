@@ -14,7 +14,7 @@ const schema = yup.object().shape({
         .string()
         .oneOf(['student', 'alumni', 'instructor'])
         .required('please choose a role'),
-    status: yup
+    civil: yup
         .string()
         .oneOf(['single', 'married'])
         .required(),
