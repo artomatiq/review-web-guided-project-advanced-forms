@@ -92,19 +92,31 @@ export default function FriendForm(props) {
       <div className='form-group checkboxes'>
         <h4>Hobbies</h4>
 
-        {/* ////////// CHECKBOXES ////////// */}
-        {/* ////////// CHECKBOXES ////////// */}
-        {/* ////////// CHECKBOXES ////////// */}
         <label>Hiking
-
+          <input
+            type='checkbox'
+            name='hiking'
+            id='hiking'
+            onChange={onchange}
+          />
         </label>
 
         <label>Reading
-
+        <input
+            type='checkbox'
+            name='reading'
+            id='reading'
+            onChange={onchange}
+          />
         </label>
 
         <label>Coding
-
+        <input
+            type='checkbox'
+            name='coding'
+            id='coding'
+            onChange={onchange}
+          />
         </label>
       </div>
     </form>
